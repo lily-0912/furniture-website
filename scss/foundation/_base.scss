@@ -1,0 +1,33 @@
+// common
+@use "../global/forwards" as fw;
+
+html{
+    font-size: 12px;
+}
+
+body{
+    font-family: "Hiragino Kaku Gothic ProN", sans-serif, serif;
+    line-height: 1.5;
+    color: fw.$text;
+}
+
+a{
+    font-size: fw.$link;
+}
+
+th, dt{
+    font-weight: normal;
+}
+
+.wrapper{
+    max-width: 1360px;
+    padding: 0 40px;
+    margin: 0 auto;
+}
+
+
+@include fw.mq("sp"){
+  .wrapper{
+    max-width: 900px;
+  }
+}

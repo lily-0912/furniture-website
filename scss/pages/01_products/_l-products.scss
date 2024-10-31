@@ -1,0 +1,18 @@
+@use "../../global/forwards" as fw;
+
+// 商品一覧のCSSはlayout/l-product-list.scss参照
+
+
+
+.l-product-list__page{
+  display: flex;
+  gap: 40px;
+  margin-top: 40px;
+  justify-content: center;
+}
+
+@include fw.mq("sp"){
+  .l-product-list__page{
+    margin-top: 59px;
+  }
+}

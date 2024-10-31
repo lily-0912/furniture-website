@@ -1,0 +1,30 @@
+@use "../global/forwards" as fw;
+.l-footer .wrapper{
+  margin: 122px auto 20px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.l-footer__sns-ul{
+  display: flex;
+  gap: 30px;
+  align-items: center;
+}
+
+
+.copy-right{
+  font-size: fw.$small;
+}
+
+@include fw.mq("sp"){
+  .l-footer .wrapper{
+    display: block;
+    margin-top: 105px;
+    margin-right: auto;
+  }
+
+  .l-footer__sns-ul{
+    margin-bottom: 5px;
+  }
+  
+}

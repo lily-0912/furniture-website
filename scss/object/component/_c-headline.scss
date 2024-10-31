@@ -1,0 +1,36 @@
+@use "../../global/forwards" as fw;
+
+.section-title{
+  font-size: fw.$link;
+  margin: 40px 0 30px;
+
+  opacity: 0;
+  visibility: hidden;
+  transform: translateX(-50px);
+  transition: all 1.5s;
+}
+
+.fade-in__from-left{
+
+  .section-title{
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(0);
+  }
+}
+
+
+@include fw.mq("sp"){
+  .site-title{
+    width: 61%;
+    max-width: 260px;
+
+    img{
+      width: 100%;
+    }
+  }
+
+  .section-title{
+    margin-bottom: 11px;
+  }
+}

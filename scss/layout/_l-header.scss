@@ -1,0 +1,121 @@
+@use "../global/forwards" as fw;
+
+.l-header .wrapper{
+  height: 80px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.l-header__nav{
+  padding: 36px 50px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 200;
+
+  display: none;
+}
+
+.l-header__ul{
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.hamburger{
+  display: block;
+  width: 30px;
+  height: 30px;
+  position: relative;
+}
+
+.hamburger__border{
+  width: 30px;
+  height: 2px;
+  background-color: fw.$text;
+  position: absolute;
+  left: 0;
+
+  transition: all .6s;
+}
+
+
+.hamburger__border-top{
+  top: 10px;
+}
+
+.hamburger__border-bottom{
+  top: 20px;
+}
+
+.hamburger__background{
+  width: 100vw;
+  height: 100vh;
+  background-color: fw.$black;
+  position: fixed;
+  top: 0;
+  left: 0;
+  cursor: pointer;
+  z-index: 100;
+
+  visibility: hidden;
+  opacity: 0;
+  transition: all .3s ease-out;
+}
+
+
+// ハンバーガーが開いた時
+
+.nav-open{
+
+  .l-header__nav{
+    display: block;
+  }
+
+
+  .l-header__li{
+    color: fw.$white;
+    font-size: fw.$link;
+  }
+
+  .hamburger{
+    z-index: 300;
+  }
+
+  .hamburger__border{
+    background-color: fw.$white;
+  }
+
+  .hamburger__border-top{
+    transform: rotate(45deg);
+    top: 15px;
+  }
+
+  .hamburger__border-bottom{
+    transform: rotate(-45deg);
+    top: 15px;
+  }
+
+  .hamburger__background{
+    visibility: visible;
+    opacity: .8;
+  }
+}
+
+@include fw.mq("sp"){
+  .nav-open{
+
+    .l-header__nav{
+      padding-top: 100px;
+      left: 50%;
+      transform: translateX(-50%);
+      text-align: center;
+    }
+  
+  }
+  
+}
+
+
+

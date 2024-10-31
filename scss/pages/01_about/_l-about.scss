@@ -1,0 +1,37 @@
+@use "../../global/forwards" as fw;
+
+.l-about-inner{
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+
+  opacity: 0;
+  visibility: hidden;
+  transform: translateX(-100px);
+  transition: all 1.5s;
+}
+
+.l-about__text{
+  width: 46%;
+  font-size: fw.$link;
+}
+
+.fade-in__from-left{
+
+  .l-about-inner{
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(0);
+  }
+
+}
+
+@include fw.mq("sp"){
+  .l-about .wrapper{
+    margin-top: 30px;
+  }
+  
+  .l-about__text{
+    width: 100%;
+  }
+}

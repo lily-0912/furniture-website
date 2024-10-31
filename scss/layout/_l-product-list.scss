@@ -1,0 +1,46 @@
+@use "../global/forwards" as fw;
+
+.l-product-list__ul{
+  display: grid;
+  grid-template-columns: repeat(4 , 1fr);
+  column-gap: 34px;
+  row-gap: 40.5px;
+}
+
+.l-product-list__li{
+  opacity: 0;
+  visibility: hidden;
+  transition: all 1.5s;
+  transform: translateY(50px);
+}
+
+.l-product-list__product-img{
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.view-more{
+  display: block;
+  text-align: center;
+  margin-top: 40px;
+}
+
+.fade-in__from-bottom{
+  &.l-product-list__li{
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+}
+
+@include fw.mq("sp"){
+  .l-product-list__ul{
+    grid-template-columns: repeat(2 , 1fr);
+    column-gap: 19px;
+    row-gap: 40px;
+  }
+  
+  .view-more{
+    margin-top: 59px;
+  }
+}

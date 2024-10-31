@@ -1,0 +1,32 @@
+@charset "UTF-8";
+// ===============================================================
+// use
+// ===============================================================
+
+// foundationフォルダ
+// リセットCSS
+@use "../scss/foundation/reset";
+// ベースとなるCSS
+@use "../scss/foundation/base";
+
+// layoutフォルダ
+// ヘッダーCSS
+@use "../scss/layout/l-header";
+// フッターCSS
+@use "../scss/layout/l-footer";
+// トップ商品一覧CSS
+@use "../scss/layout/l-product-list";
+
+
+// プロダクトCSS
+@use "../scss/pages/01_products/l-products";
+// プロダクト詳細CSS
+@use "../scss/pages/01_products-detail/l-products_detail";
+// アバウトCSS
+@use "../scss/pages/01_about/l-about";
+// 会社概要CSS
+@use "../scss/pages/01_company/l-company";
+
+// componentフォルダ
+// 見出しCSS
+@use "../scss/object/component/c-headline";

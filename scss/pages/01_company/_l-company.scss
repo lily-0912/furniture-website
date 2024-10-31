@@ -1,0 +1,71 @@
+@use "../../global/forwards" as fw;
+.l-company-inner{
+  opacity: 0;
+  visibility: hidden;
+  transform: translateX(-100px);
+  transition: all 1.5s;
+}
+
+
+.l-company__dl{
+  font-size: fw.$link;
+}
+
+.l-company__row{
+  width: 46%;
+  display: grid;
+  grid-template-columns: 4em 1fr;
+  gap: 124px;
+  margin-left: 10px;
+  padding: 20px 0 20px 10px;
+  border-bottom: 1px solid fw.$gray;
+}
+
+.l-company__row:last-child{
+  border-bottom: none;
+}
+
+.google-map{
+  width: 46%;
+  height: 300px;
+  filter: grayscale(100%);
+
+  opacity: 0;
+  visibility: hidden;
+  transform: translateX(-50px);
+  transition: all 1.5s;
+}
+
+.fade-in__from-left{
+  .l-company-inner{
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(0);
+  }
+
+  .google-map{
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(0);
+  }
+}
+
+
+@include fw.mq("sp"){
+  
+  .l-company__row{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+  }
+  
+  .l-company__row:last-child{
+    border-bottom: none;
+  }
+  
+  .google-map{
+    width: 100%;
+  }
+  
+}
